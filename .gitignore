@@ -80,3 +80,6 @@ crashlytics-build.properties
 /bin
 /*.log
 /DebugPhotos
+
+/Builds/
+CODEX_*.md
