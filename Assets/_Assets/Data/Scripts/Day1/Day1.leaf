@@ -29,7 +29,6 @@ $call Sky3->Deactivate()
 $call Sky4->Deactivate()
 $call Sky5->Deactivate()
 $call Penny->LoopToGate()
-$call PennycookSurvey->ShowSurvey(0,1)
 
 $call RedAdelie->SetInteractable(false)
 $call GreenAdelie->SetInteractable(false)
@@ -53,12 +52,6 @@ $call Wait(2)
 
 $call MargoHint->PlayFX()
 
-$call SetWarpActive(WarpBluff, true)
-
-{@Player}   Wow, I can't believe I'm finally here!  $[Day1/Tent/Player_1]
-{@Player}   OK, time to get focused now. Those penguins are not gonna research themselves. $[Day1/Tent/Player_3]
-{@Player}   Step one: Find research tent. Check.    $[Day1/Tent/Player_4]
-{@Player}   Step two: Report to Margo, penguin expert and team leader.    $[Day1/Tent/Player_5]
 
 $call Tutorial1->Activate()
 $call Tutorial1->SetTutorial(true)
@@ -275,8 +268,6 @@ $goto Day1.Tutorial4Loop
 
 $call Tutorial2->SetTutorial(false)
 $call Tutorial2->Deactivate()
-$call SetWarpGroupActive(Rookery, true)
-
 {@Margo}	Nice work, kiddo! We've got our initial population count. $[Day1/Bluff/1bm08]
 {@Partner}  Oh, hey there new guy! I see you've met Margo. I'm Penny. $[Day1/Bluff/1bp01]
 {@Player}	Wow! I remember when you talked to my 5th grade class at Gompers Elementary. $[Day1/Bluff/1bs07]
@@ -308,8 +299,6 @@ $call Tutorial5->SetTutorial(false)
 $call Tutorial2->SetTutorial(false)
 $call Tutorial5->Deactivate()
 $call Tutorial2->Deactivate()
-
-$call SetWarpGroupActive(Rookery, true)
 
 //$call Daisy->SetInteractable(false)
 //$call Meatball->SetInteractable(false)
@@ -350,7 +339,6 @@ $call Tutorial7->Deactivate()
 
 $set	chapter:identifiedCount + 1
 $if chapter:identifiedCount >= 5
-	$call SetWarpActive(WarpBluffBack, true)
 	$set chapter:finishedFirstObservations = true
 $endif
 
